@@ -1,14 +1,37 @@
-export function mudarCor(h1){
-  h1.style.backgroundColor= '#ccc';
+var slideIndex = 1;
+
+showSlides(slideIndex);
+
+function buscaSlide(n) {
+    showSlides(slideIndex += n);
 }
 
-<script> document.getElementById('titulo').focus();
-function mudaCor() {
-    var colorAnt = document.getElementById('titulo').style.backgroundColor;
-    if (colorAnt === 'black') {
-        document.getElementById('titulo').style.backgroundColor = 'orange';
-    } else {
-        document.getElementById('titulo').style.backgroundColor = 'black';
+function ativaSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("carrossel item fade");
+    var dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {
+        slideIndex = 1
     }
-} 
-</script>
+            
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex-1].style.display = "block";
+alert('teste');
+    dots[slideIndex-1].className += " active";
+}
