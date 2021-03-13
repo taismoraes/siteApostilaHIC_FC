@@ -12,10 +12,6 @@ header{
     margin-bottom: 0px !important; /* !important torna essa renderização importante, 
     impedindo que outra a sobreponha */
 }
-.container-menu{
-    position: relative;
-    display: inline-block;
-}
 nav {
     flex-direction: row;
     padding: 2px;

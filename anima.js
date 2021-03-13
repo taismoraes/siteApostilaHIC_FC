@@ -32,6 +32,6 @@ function showSlides(n) {
     }
 
     slides[slideIndex-1].style.display = "block";
-alert('teste');
+
     dots[slideIndex-1].className += " active";
 }
